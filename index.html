@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Time tracking dashboard</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div class="app">
+    <main>
+      <section class="profile_container">
+        <div class="profile">
+          <img src="./images/image-jeremy.png" alt="person image">
+          <p>Report for</p>
+          <h1>Jeremy <br> Robson</h1>
+        </div>
+        <ul>
+          <li class="time_switcher" id="daily">Daily</li>
+          <li class="time_switcher active" id="weekly">Weekly</li>
+          <li class="time_switcher" id="monthly">Monthly</li>
+        </ul>
+      </section>
+      <section class="dashboard_data_container" id="dashboard_data_container">
+        <ul>
+          <li class="work">
+            <div class="work_bg"></div>
+            <img class="icon_img" src="./images/icon-work.svg" alt="icon work">
+            <div class="text_container ">
+              <p class="title">Work <img src="./images/icon-ellipsis.svg" alt="icon ellipsis"></p>
+              <h2 class="current_time"></h2>
+              <p class="previous_time"></p>
+            </div>
+          </li>
+          <li class="play">
+            <div class="play_bg"></div>
+            <img class="icon_img" src="./images/icon-play.svg" alt="icon gamepad">
+            <div class="text_container">
+              <p class="title">Play <img src="./images/icon-ellipsis.svg" alt="icon ellipsis"></p>
+              <h2 class="current_time"></h2>
+              <p class="previous_time"></p>
+            </div>
+          </li>
+          <li class="study">
+            <div class="study_bg"></div>
+            <img class="icon_img" src="./images/icon-study.svg" alt="icon book">
+            <div class="text_container">
+              <p class="title">Study <img src="./images/icon-ellipsis.svg" alt="icon ellipsis"></p>
+              <h2 class="current_time"></h2>
+              <p class="previous_time"></p>
+            </div>
+          </li>
+          <li class="exercise">
+            <div class="exercise_bg"></div>
+            <img class="icon_img" src="./images/icon-exercise.svg" alt="icon book">
+            <div class="text_container">
+              <p class="title">Exercise <img src="./images/icon-ellipsis.svg" alt="icon ellipsis"></p>
+              <h2 class="current_time"></h2>
+              <p class="previous_time"></p>
+            </div>
+          </li>
+          <li class="social">
+            <div class="social_bg"></div>
+            <img class="icon_img" src="./images/icon-social.svg" alt="icon message">
+            <div class="text_container">
+              <p class="title">Social <img src="./images/icon-ellipsis.svg" alt="icon ellipsis"></p>
+              <h2 class="current_time"></h2>
+              <p class="previous_time"></p>
+            </div>
+          </li>
+          <li class="selfcare">
+            <div class="selfcare_bg"></div>
+            <img class="icon_img" src="./images/icon-self-care.svg" alt="icon heart">
+            <div class="text_container">
+              <p class="title">Self Care <img src="./images/icon-ellipsis.svg" alt="icon ellipsis"></p>
+              <h2 class="current_time"></h2>
+              <p class="previous_time"></p>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">M2AML</a>.
+    </div>
+  </div>
+  <script src="./index.js"></script>
+</body>
+
+</html>

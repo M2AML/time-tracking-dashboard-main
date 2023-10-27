@@ -1,0 +1,433 @@
+/***
+    The new CSS reset - version 1.8.4 (last updated 14.2.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where( :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-inline-size: 100%;
+    max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+    -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+    all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+    content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+     display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+     - fix for the content editable attribute will work properly.
+     - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+    all: revert;
+}
+
+/* DESKTOP Preview*/
+.app {
+    position: relative;
+    height: 100vh;
+    background-color: hsl(226, 43%, 10%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Rubik', sans-serif;
+    width: 64vw;
+    border-radius: 15px;
+    gap: 20px;
+    font-size: calc(2vmin + 10px);
+    color: hsl(0, 0%, 100%);
+}
+
+.active {
+    color: hsl(0, 0%, 100%) !important;
+}
+
+/* SECTION PROFILE CONTAINER*/
+.profile_container {
+    background-color: hsl(235, 46%, 20%);
+    flex-basis: 20%;
+    border-radius: 15px;
+    height: 100%;
+}
+
+.profile_container .profile {
+    padding: 35px 25px;
+    background-color: hsl(246, 80%, 60%);
+    border-radius: 15px;
+}
+
+.profile img {
+    width: 60px;
+    border: 2px solid hsl(0, 0%, 100%);
+    border-radius: 50%;
+    margin-bottom: 25px;
+}
+
+.profile p {
+    font-size: 0.8em;
+    color: hsl(236, 100%, 87%);
+}
+
+.profile h1 {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.profile_container ul {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 25px 25px 10px;
+    font-size: 0.7em;
+    font-weight: 400;
+    color: hsl(235, 45%, 61%);
+}
+
+.profile_container ul li {
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.profile_container ul li:hover {
+    color: hsl(0, 0%, 100%);
+}
+
+/*DASHBOARD DATA CONTAINER*/
+.dashboard_data_container {
+    flex-basis: 78%;
+}
+
+.dashboard_data_container ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+}
+
+.dashboard_data_container ul li {
+    position: relative;
+    bottom: 0;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.work_bg {
+    background-color: hsl(15, 100%, 70%);
+}
+
+.play_bg {
+    background-color: hsl(195, 74%, 62%);
+}
+
+.study_bg {
+    background-color: hsl(348, 100%, 68%);
+}
+
+.exercise_bg {
+    background-color: hsl(145, 58%, 55%);
+}
+
+.social_bg {
+    background-color: hsl(264, 64%, 52%);
+}
+
+.selfcare_bg {
+    background-color: hsl(43, 84%, 65%);
+}
+
+.work_bg,
+.play_bg,
+.study_bg,
+.exercise_bg,
+.social_bg,
+.selfcare_bg {
+    position: absolute;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    animation: heightVariation 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes heightVariation {
+    from {
+        transform: scaleY(0.5);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+.dashboard_data_container ul li .icon_img {
+    position: absolute;
+    right: 10px;
+    width: 80px;
+    top: -10px;
+    transform: scale(0);
+    animation: imgAnim 0.7s 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes imgAnim {
+    to {
+        transform: scale(1);
+    }
+}
+
+.dashboard_data_container .text_container {
+    cursor: pointer;
+    background-color: hsl(235, 46%, 20%);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    bottom: 0;
+    width: 100%;
+    height: 82%;
+    padding: 25px;
+    border-radius: 15px 15px 0 0;
+    transition: all 0.2s linear;
+}
+
+.dashboard_data_container .text_container:hover {
+    background-color: hsl(235, 45%, 61%);
+}
+
+.text_container .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: 400;
+}
+
+.text_container .title img {
+    width: 15%;
+}
+
+.text_container h2 {
+    font-size: 1.6em;
+    font-weight: 300;
+}
+
+.text_container .previous_time {
+    font-size: 0.6em;
+    color: hsl(236, 100%, 87%);
+}
+
+/* ATTRIBUTION */
+.attribution {
+    position: absolute;
+    bottom: 20px;
+    color: hsl(236, 100%, 87%);
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(0, 0%, 100%);
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 1440px) {
+    main {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    main {
+        width: 90vw;
+        font-size: calc(1vmin + 10px);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .app {
+        height: 1500px;
+    }
+
+    main {
+        flex-direction: column;
+        justify-content: space-between;
+        height: 90%;
+        width: 80%;
+        font-size: calc(3vmin + 10px);
+    }
+
+    /* SECTION PROFILE CONTAINER*/
+    .profile_container {
+        flex-basis: auto;
+        height: auto;
+    }
+
+    .profile_container .profile {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        column-gap: 15px;
+        grid-template-areas:
+            "icon text"
+            "icon textName";
+        align-items: center;
+        padding: 25px 20px;
+    }
+
+    .profile img {
+        margin-bottom: 0;
+        grid-area: icon;
+        width: 100%;
+    }
+
+    .profile p {
+        grid-area: text;
+    }
+
+    .profile h1 {
+        grid-area: "textName";
+        font-size: 1em;
+        margin-bottom: 0;
+    }
+
+    .profile h1 br {
+        display: none;
+    }
+
+    .profile_container ul {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 25px;
+    }
+
+    .profile_container ul li {
+        margin-bottom: 0;
+    }
+
+    /*DASHBOARD DATA CONTAINER*/
+    .dashboard_data_container {
+        flex-basis: 80%;
+    }
+
+    .dashboard_data_container ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        height: 100%;
+        gap: 20px;
+    }
+
+    .dashboard_data_container ul li .icon_img {
+        width: 70px;
+    }
+
+    .dashboard_data_container .text_container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 20px;
+        height: 75%;
+    }
+
+    .dashboard_data_container .text_container .title {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+
+    main {
+        font-size: calc(2.5vmin + 10px);
+    }
+
+    /*DASHBOARD DATA CONTAINER*/
+    .dashboard_data_container {
+        flex-basis: 84%;
+    }
+}
