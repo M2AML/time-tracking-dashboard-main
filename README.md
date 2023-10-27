@@ -11,7 +11,7 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 - [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
------
+
 ## Overview
 
 ### The challenge
@@ -28,8 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/M2AML/time-tracking-dashboard-main)
-- Live Site URL: [Add live site URL here](https://time-tracking-dashboard-one-orpin.vercel.app/)
+[Live Site](https://time-tracking-dashboard-one-orpin.vercel.app/)
 
 ## My process
 
